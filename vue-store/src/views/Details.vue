@@ -14,13 +14,13 @@
         <div class="list">
           <ul>
             <li>
-              <router-link to>概述</router-link>
+              <router-link to>Overview</router-link>
             </li>
             <li>
-              <router-link to>参数</router-link>
+              <router-link to>Parameter</router-link>
             </li>
             <li>
-              <router-link to>用户评价</router-link>
+              <router-link to>User Evaluation</router-link>
             </li>
           </ul>
         </div>
@@ -51,44 +51,44 @@
       <div class="content">
         <h1 class="name">{{productDetails.product_name}}</h1>
         <p class="intro">{{productDetails.product_intro}}</p>
-        <p class="store">小米自营</p>
+        <p class="store">Xiaomi self-operated</p>
         <div class="price">
-          <span>{{productDetails.product_selling_price}}元</span>
+          <span>{{productDetails.product_selling_price}}$</span>
           <span
             v-show="productDetails.product_price != productDetails.product_selling_price"
             class="del"
-          >{{productDetails.product_price}}元</span>
+          >{{productDetails.product_price}}$</span>
         </div>
         <div class="pro-list">
           <span class="pro-name">{{productDetails.product_name}}</span>
           <span class="pro-price">
-            <span>{{productDetails.product_selling_price}}元</span>
+            <span>{{productDetails.product_selling_price}}$</span>
             <span
               v-show="productDetails.product_price != productDetails.product_selling_price"
               class="pro-del"
-            >{{productDetails.product_price}}元</span>
+            >{{productDetails.product_price}}$</span>
           </span>
-          <p class="price-sum">总计 : {{productDetails.product_selling_price}}元</p>
+          <p class="price-sum">Total : {{productDetails.product_selling_price}}$</p>
         </div>
         <!-- 内容区底部按钮 -->
         <div class="button">
-          <el-button class="shop-cart" :disabled="dis" @click="addShoppingCart">加入购物车</el-button>
-          <el-button class="like" @click="addCollect">喜欢</el-button>
+          <el-button class="shop-cart" :disabled="dis" @click="addShoppingCart">Add To Shopping Cart</el-button>
+          <el-button class="like" @click="addCollect">Like</el-button>
         </div>
         <!-- 内容区底部按钮END -->
         <div class="pro-policy">
           <ul>
             <li>
-              <i class="el-icon-circle-check"></i> 小米自营
+              <i class="el-icon-circle-check"></i> Xiaomi self-operated
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 小米发货
+              <i class="el-icon-circle-check"></i> millet delivery
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 7天无理由退货
+              <i class="el-icon-circle-check"></i> 7 days no reason to return
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 7天价格保护
+              <i class="el-icon-circle-check"></i> 7 days price protection
             </li>
           </ul>
         </div>

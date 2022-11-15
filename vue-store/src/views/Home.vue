@@ -21,7 +21,7 @@
         <!-- 手机商品展示区域 -->
         <div class="phone">
           <div class="box-hd">
-            <div class="title">手机</div>
+            <div class="title">Cell Phone</div>
           </div>
           <div class="box-bd">
             <div class="promo-list">
@@ -39,11 +39,11 @@
         <!-- 家电商品展示区域 -->
         <div class="appliance" id="promo-menu">
           <div class="box-hd">
-            <div class="title">家电</div>
+            <div class="title">Home Appliances</div>
             <div class="more" id="more">
               <MyMenu :val="2" @fromChild="getChildMsg">
-                <span slot="1">热门</span>
-                <span slot="2">电视影音</span>
+                <span slot="1">Popular</span>
+                <span slot="2">TV video</span>
               </MyMenu>
             </div>
           </div>
@@ -68,12 +68,12 @@
         <!-- 配件商品展示区域 -->
         <div class="accessory" id="promo-menu">
           <div class="box-hd">
-            <div class="title">配件</div>
+            <div class="title">Accessories</div>
             <div class="more" id="more">
               <MyMenu :val="3" @fromChild="getChildMsg2">
-                <span slot="1">热门</span>
-                <span slot="2">保护套</span>
-                <span slot="3">充电器</span>
+                <span slot="1">Popular</span>
+                <span slot="2">Protective Case</span>
+                <span slot="3">Battery Charger</span>
               </MyMenu>
             </div>
           </div>
@@ -109,8 +109,8 @@ export default {
       applianceHotList: "", //热门家电商品列表
       accessoryList: "", //配件商品列表
       accessoryHotList: "", //热门配件商品列表
-      protectingShellList: "", // 保护套商品列表
-      chargerList: "", //充电器商品列表
+      protectingShellList: "", // Protective Case商品列表
+      chargerList: "", //Battery Charger商品列表
       applianceActive: 1, // 家电当前选中的商品分类
       accessoryActive: 1 // 配件当前选中的商品分类
     };
@@ -146,12 +146,12 @@ export default {
         return;
       }
       if (val == 2) {
-        // 2为保护套商品
+        // 2为Protective Case商品
         this.accessoryList = this.protectingShellList;
         return;
       }
       if (val == 3) {
-        //3 为充电器商品
+        //3 Bbattery Charger商品
         this.accessoryList = this.chargerList;
         return;
       }
@@ -168,17 +168,17 @@ export default {
         return Promise.reject(err);
       });
     // 获取各类商品数据
-    this.getPromo("手机", "phoneList");
-    this.getPromo("电视机", "miTvList");
-    this.getPromo("保护套", "protectingShellList");
-    this.getPromo("充电器", "chargerList");
+    this.getPromo("Cell Phone", "phoneList");
+    this.getPromo("TV set", "miTvList");
+    this.getPromo("Protective Case", "protectingShellList");
+    this.getPromo("Battery Charger", "chargerList");
     this.getPromo(
-      ["电视机", "空调", "洗衣机"],
+      ["TV set", "Air Conditioner", "Washing Machine"],
       "applianceList",
       "/api/product/getHotProduct"
     );
     this.getPromo(
-      ["保护套", "保护膜", "充电器", "充电宝"],
+      ["Protective Case", "Protective Film", "Battery Charger", "Power Bank"],
       "accessoryList",
       "/api/product/getHotProduct"
     );

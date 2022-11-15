@@ -11,7 +11,7 @@
     <div class="collect-header">
       <div class="collect-title">
         <i class="el-icon-collection-tag" style="color: #ff6700;"></i>
-        我的收藏
+        Collection
       </div>
     </div>
     <div class="content">
@@ -21,8 +21,8 @@
       <!-- 收藏列表为空的时候显示的内容 -->
       <div v-else class="collect-empty">
         <div class="empty">
-          <h2>您的收藏还是空的！</h2>
-          <p>快去购物吧！</p>
+          <h2>Your collection is still empty!</h2>
+          <p>Go shopping!</p>
         </div>
       </div>
       <!--  收藏列表为空的时候显示的内容END -->
