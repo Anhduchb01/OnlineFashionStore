@@ -1,5 +1,5 @@
 <!--
- * @Description: 关于我们页面组件，未完成
+ * @Description: About Us页面组件，未完成
  * @Author: hai-27
  * @Date: 2020-02-07 16:23:00
  * @LastEditors: hai-27
@@ -10,7 +10,7 @@
     <div class="about-header">
       <div class="about-title">
         <i class="el-icon-tickets" style="color: #ff6700;"></i>
-        关于我们
+        About Us
       </div>
     </div>
     <div class="about-content">
