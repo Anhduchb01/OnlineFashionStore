@@ -10,9 +10,9 @@
     <ul>
       <li v-for="item in list" :key="item.product_id">
         <el-popover placement="top">
-          <p>确定删除吗？</p>
+          <p>Confirm To Delete? </p>
           <div style="text-align: right; margin: 10px 0 0">
-            <el-button type="primary" size="mini" @click="deleteCollect(item.product_id)">确定</el-button>
+            <el-button type="primary" size="mini" @click="deleteCollect(item.product_id)">Sure</el-button>
           </div>
           <i class="el-icon-close delete" slot="reference" v-show="isDelete"></i>
         </el-popover>
@@ -21,17 +21,17 @@
           <h2>{{item.product_name}}</h2>
           <h3>{{item.product_title}}</h3>
           <p>
-            <span>{{item.product_selling_price}}元</span>
+            <span>{{item.product_selling_price}}$</span>
             <span
               v-show="item.product_price != item.product_selling_price"
               class="del"
-            >{{item.product_price}}元</span>
+            >{{item.product_price}}$</span>
           </p>
         </router-link>
       </li>
       <li v-show="isMore && list.length>=1" id="more">
         <router-link :to="{ path: '/goods', query: {categoryID:categoryID} }">
-          浏览更多
+          Browse More
           <i class="el-icon-d-arrow-right"></i>
         </router-link>
       </li>
@@ -42,13 +42,13 @@
 export default {
   name: "MyList",
   // list为父组件传过来的商品列表
-  // isMore为是否显示“浏览更多”
+  // isBore为是否显示“browse More”
   props: ["list", "isMore", "isDelete"],
   data() {
     return {};
   },
   computed: {
-    // 通过list获取当前显示的商品的分类ID，用于“浏览更多”链接的参数
+    // B过list获取当前显示的商品的分类ID，用于“browse More”链接的参数
     categoryID: function() {
       let categoryID = [];
       if (this.list != "") {

@@ -1,5 +1,5 @@
 <!--
- * @Description: 我的订单页面组件
+ * @Description: My Orders页面组件
  * @Author: hai-27
  * @Date: 2020-02-20 17:21:54
  * @LastEditors: hai-27
@@ -7,34 +7,34 @@
  -->
 <template>
   <div class="order">
-    <!-- 我的订单头部 -->
+    <!-- My Orders头部 -->
     <div class="order-header">
       <div class="order-header-content">
         <p>
           <i class="el-icon-s-order" style="font-size: 30px;color: #ff6700;"></i>
-          我的订单
+          My Orders
         </p>
       </div>
     </div>
-    <!-- 我的订单头部END -->
+    <!-- My Orders头部END -->
 
-    <!-- 我的订单主要内容 -->
+    <!-- My Orders主要内容 -->
     <div class="order-content" v-if="orders.length>0">
       <div class="content" v-for="(item,index) in orders" :key="index">
         <ul>
-          <!-- 我的订单表头 -->
+          <!-- My Orders表头 -->
           <li class="order-info">
-            <div class="order-id">订单编号: {{item[0].order_id}}</div>
-            <div class="order-time">订单时间: {{item[0].order_time | dateFormat}}</div>
+            <div class="order-id">Order ID: {{item[0].order_id}}</div>
+            <div class="order-time">Order item: {{item[0].order_time | dateFormat}}</div>
           </li>
           <li class="header">
             <div class="pro-img"></div>
-            <div class="pro-name">商品名称</div>
-            <div class="pro-price">单价</div>
-            <div class="pro-num">数量</div>
-            <div class="pro-total">小计</div>
+            <div class="pro-name">Product Name</div>
+            <div class="pro-price">Price</div>
+            <div class="pro-num">Quantity</div>
+            <div class="pro-total">Subtotal</div>
           </li>
-          <!-- 我的订单表头END -->
+          <!-- My Orders表头END -->
 
           <!-- 订单列表 -->
           <li class="product-list" v-for="(product,i) in item" :key="i">
@@ -48,22 +48,22 @@
                 :to="{ path: '/goods/details', query: {productID:product.product_id} }"
               >{{product.product_name}}</router-link>
             </div>
-            <div class="pro-price">{{product.product_price}}元</div>
+            <div class="pro-price">{{product.product_price}}$</div>
             <div class="pro-num">{{product.product_num}}</div>
-            <div class="pro-total pro-total-in">{{product.product_price*product.product_num}}元</div>
+            <div class="pro-total pro-total-in">{{product.product_price*product.product_num}}$</div>
           </li>
         </ul>
         <div class="order-bar">
           <div class="order-bar-left">
             <span class="order-total">
-              共
-              <span class="order-total-num">{{total[index].totalNum}}</span> 件商品
+              共 - common
+              <span class="order-total-num">{{total[index].totalNum}}</span> Items
             </span>
           </div>
           <div class="order-bar-right">
             <span>
-              <span class="total-price-title">合计：</span>
-              <span class="total-price">{{total[index].totalPrice}}元</span>
+              <span class="total-price-title">Total: </span>
+              <span class="total-price">{{total[index].totalPrice}}$</span>
             </span>
           </div>
           <!-- 订单列表END -->
@@ -71,13 +71,13 @@
       </div>
       <div style="margin-top:-40px;"></div>
     </div>
-    <!-- 我的订单主要内容END -->
+    <!-- My Orders主要内容END -->
 
     <!-- 订单为空的时候显示的内容 -->
     <div v-else class="order-empty">
       <div class="empty">
-        <h2>您的订单还是空的！</h2>
-        <p>快去购物吧！</p>
+        <h2>Your order is still empty! </h2>
+        <p>Go Shopping! </p>
       </div>
     </div>
     <!-- 订单为空的时候显示的内容END -->
@@ -134,7 +134,7 @@ export default {
   background-color: #f5f5f5;
   padding-bottom: 20px;
 }
-/* 我的订单头部CSS */
+/* My Orders头部CSS */
 .order .order-header {
   height: 64px;
   border-bottom: 2px solid #ff6700;
@@ -152,7 +152,7 @@ export default {
   font-weight: normal;
   color: #424242;
 }
-/* 我的订单头部CSS END */
+/* My Orders头部CSS END */
 .order .content {
   width: 1225px;
   margin: 0 auto;
@@ -165,7 +165,7 @@ export default {
   color: #424242;
   line-height: 85px;
 }
-/* 我的订单表头CSS */
+/* My Orders表头CSS */
 .order .content ul .order-info {
   height: 60px;
   line-height: 60px;
@@ -186,7 +186,7 @@ export default {
   padding-right: 26px;
   color: #424242;
 }
-/* 我的订单表头CSS END */
+/* My Orders表头CSS END */
 
 /* 订单列表CSS */
 .order .content ul .product-list {
